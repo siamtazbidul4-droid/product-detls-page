@@ -1,0 +1,1117 @@
+# MASTER ENGINEERING PROMPT
+## FINAL CHECKOUT VERIFICATION + PREMIUM DYNAMIC HOMEPAGE + GLOBAL PRODUCT FILTERING ARCHITECTURE
+
+### ROLE
+
+Act as a Principal Software Engineer, Senior Full-Stack Architect, PhD-Level Software Engineering Specialist, Database Architect, UI/UX Engineer, Cybersecurity Engineer, DevOps Engineer, and QA Automation Engineer.
+
+You are responsible for investigating, auditing, fixing, implementing, and verifying the existing production-oriented e-commerce application.
+
+This is an existing project.
+
+Your task is NOT to rebuild the entire website.
+
+Your task is to preserve the existing architecture and working functionality while completing the requested Checkout Verification, Homepage Improvements, Product Filtering Architecture, Dynamic Homepage Content Management, and Customer Review Integration.
+
+**The uploaded screenshots are mandatory visual references.**
+
+Use:
+- The previously provided premium checkout screenshot as the Checkout UI reference.
+- The newly uploaded homepage screenshot as the reference for understanding the existing homepage and identifying the unwanted Product Filter Sidebar.
+
+Do not blindly copy the second screenshot's entire layout. Preserve the existing homepage design and implement only the requested changes.
+
+---
+
+# PART 1 — COMPLETE PROJECT INVESTIGATION
+
+Before modifying code, investigate the complete repository.
+
+Inspect:
+
+1. package.json.
+2. Existing React and TypeScript architecture.
+3. Tailwind CSS configuration.
+4. Frontend routing.
+5. Shared layouts and components.
+6. Homepage components.
+7. Hero slider implementation.
+8. Category section.
+9. Product listing components.
+10. Product filtering logic.
+11. Product API endpoints.
+12. Product and category models.
+13. Banner management.
+14. Advertisement management.
+15. Admin panel.
+16. Customer authentication.
+17. Customer review system.
+18. Checkout implementation.
+19. Saved address implementation.
+20. Bangladesh location package and integration.
+21. Order model and order APIs.
+22. Payment gateway integrations.
+23. Admin order management.
+24. MongoDB database architecture.
+25. Middleware and authorization.
+26. Existing deployment configuration.
+27. Existing testing infrastructure.
+
+Identify the actual implementation and reuse existing functionality.
+
+Do not assume a feature is missing simply because it is not visible on a particular page.
+
+Create a dependency map before modifying shared components.
+
+---
+
+# PART 2 — CHECKOUT SYSTEM FINAL PRODUCTION VERIFICATION
+
+The previously implemented Checkout System must undergo a complete final audit.
+
+Do not assume the previous implementation is correct merely because its UI looks functional.
+
+Investigate the complete frontend-to-database execution flow.
+
+## 2.1 Checkout UI Verification
+
+Verify that the checkout page correctly implements the previously supplied visual reference.
+
+Check:
+
+- Existing website header.
+- Checkout hero banner.
+- Admin-controlled banner configuration.
+- Contact Information.
+- Personal Information.
+- Shipping Address.
+- Bangladesh location selectors.
+- Saved Address functionality.
+- Payment Method selection.
+- Terms and Conditions.
+- Order Summary.
+- Shipping calculation.
+- Tax/VAT calculation.
+- Final payable amount.
+- Place Order button.
+- Trust and security section.
+- Support section.
+- Footer.
+
+Preserve the premium green design and typography.
+
+Do not unnecessarily redesign the checkout page.
+
+## 2.2 Bangladesh Location Verification
+
+Verify the actual location package and implementation.
+
+Required hierarchy:
+
+Division → District → Thana/Upazila → Union.
+
+Verify:
+
+- Actual package functionality.
+- Complete available location coverage.
+- Searchable dropdown.
+- Autocomplete.
+- Dynamic cascading selection.
+- Parent-child dependency.
+- Invalid selection prevention.
+- Loading states.
+- Empty search results.
+- Keyboard accessibility.
+- Mobile usability.
+- Correct location persistence.
+
+No manually hardcoded fake location data.
+
+No dummy location lists.
+
+Do not claim complete Union-level coverage unless it has actually been verified.
+
+## 2.3 Saved Address Verification
+
+Verify:
+
+- Create address.
+- Read addresses.
+- Update address.
+- Delete address.
+- Set default address.
+- Reuse saved address.
+- Customer ownership validation.
+- MongoDB persistence.
+
+A customer must never access another customer's addresses.
+
+## 2.4 Order Creation Verification
+
+Verify:
+
+- Server-side product price validation.
+- Product stock validation.
+- Quantity validation.
+- Shipping calculation.
+- Tax calculation.
+- Discount validation.
+- Order number generation.
+- Duplicate order prevention.
+- Idempotency.
+- MongoDB order persistence.
+- Inventory consistency.
+- Correct customer reference.
+- Shipping address snapshot.
+- Product snapshots.
+
+The backend must calculate the authoritative order total.
+
+Never trust frontend-submitted prices.
+
+## 2.5 Payment Verification
+
+Verify the actual payment integrations.
+
+Check:
+
+- Cash on Delivery.
+- bKash.
+- Nagad.
+- Debit/Credit Card, where configured.
+
+Verify payment initiation, callbacks, signatures, transaction references, status synchronization, and failure handling.
+
+Never mark an online payment as paid without backend verification.
+
+Do not simulate successful payments.
+
+## 2.6 Customer Order History
+
+Verify that actual persisted orders appear in:
+
+My Account → My Orders.
+
+Check:
+
+- Order list.
+- Order details.
+- Order number.
+- Product details.
+- Total amount.
+- Payment status.
+- Order status.
+- Shipping address.
+- Customer ownership.
+- Pagination.
+
+## 2.7 Admin Order Management
+
+Verify that every successfully created order appears in the admin panel.
+
+Check:
+
+- Order listing.
+- Order details.
+- Customer information.
+- Shipping address.
+- Product information.
+- Payment information.
+- Order status.
+- Search.
+- Filters.
+- Pagination.
+- Valid status transitions.
+- Admin authorization.
+- Notifications.
+
+## 2.8 Order Success Page
+
+Verify the separate premium Order Success Page.
+
+Check:
+
+- Actual order retrieval.
+- Order ownership.
+- Order number.
+- Order confirmation state.
+- Payment status.
+- Order summary.
+- Delivery address.
+- View My Orders button.
+- Continue Shopping button.
+- Tracking button, if supported.
+- Canvas Confetti animation.
+- Reduced-motion accessibility.
+- Refresh behavior.
+- Duplicate order prevention.
+
+Do not show a paid-success message for pending or failed payments.
+
+Fix every confirmed defect without unnecessarily changing the existing implementation.
+
+---
+
+# PART 3 — HOMEPAGE: PRESERVE EXISTING WORKING DESIGN
+
+This is an extremely important requirement.
+
+My current homepage already contains working design elements.
+
+Preserve them.
+
+The following existing sections must NOT be deleted, unnecessarily redesigned, or replaced:
+
+1. Main announcement bar.
+2. Website header.
+3. Logo.
+4. Search bar.
+5. Account section.
+6. Wishlist.
+7. Shopping cart.
+8. Main navigation.
+9. All Categories menu.
+10. Hero slider.
+11. Category section.
+12. Existing homepage banners.
+13. Existing working product sections.
+14. Existing footer.
+
+The existing hero slider and category section are already working.
+
+Preserve their current functionality.
+
+The hero slider and homepage banners must continue to be manageable through the existing admin panel.
+
+Do not replace existing admin-controlled content with hardcoded images or sample content.
+
+Do not break existing banner configurations.
+
+Do not change unrelated routes, URLs, API contracts, or components.
+
+---
+
+# PART 4 — REMOVE PRODUCT FILTER SIDEBAR FROM HOMEPAGE ONLY
+
+The newly uploaded screenshot shows a Product Filtering Sidebar on the homepage.
+
+It currently includes:
+
+- Filter Products.
+- Price Range.
+- Price Range Slider.
+- Apply Filter.
+- Brand.
+- Ratings.
+
+I do NOT want this sidebar on the homepage.
+
+### Required Behavior
+
+Remove the visible Product Filter Sidebar from the homepage only.
+
+The homepage should not display:
+
+- Filter Products sidebar.
+- Price range filter sidebar.
+- Brand filter sidebar.
+- Ratings filter sidebar.
+- Sidebar Apply Filter button.
+
+Do not replace the sidebar with another unnecessary filtering panel.
+
+The homepage should remain a clean, premium storefront experience.
+
+### CRITICAL RESTRICTION
+
+Removing the sidebar from the homepage must NOT delete or disable the existing Product Filtering System.
+
+Do not:
+
+- Delete filtering services.
+- Delete filtering APIs.
+- Delete filter components used by other pages.
+- Delete backend filtering logic.
+- Remove product price filters.
+- Remove brand filters.
+- Remove rating filters.
+- Break query parameters.
+- Break sorting.
+- Break pagination.
+
+Use route-aware rendering or page-specific layout configuration.
+
+The homepage must not render the Product Filter Sidebar.
+
+Other applicable product listing pages must continue using the existing filtering functionality.
+
+---
+
+# PART 5 — GLOBAL PRODUCT FILTERING SYSTEM
+
+The Product Filtering Sidebar must remain available on actual product listing pages.
+
+Applicable pages include:
+
+- Shop / All Products.
+- Category Product Listing.
+- Search Results.
+- Deals / Offers.
+- Brand Product Listing, if supported.
+- Other dedicated product collection pages.
+
+Do not force the filtering sidebar onto unrelated pages such as:
+
+- Homepage.
+- Checkout.
+- Cart.
+- Customer Account.
+- Wishlist, unless the existing design specifically supports product filters there.
+- Blog.
+- Contact Us.
+- About Us.
+
+### Filter Components
+
+Preserve and verify:
+
+1. Price Range.
+2. Brand.
+3. Ratings.
+4. Category, where appropriate.
+5. Availability / Stock, if already supported.
+6. Existing additional filters.
+
+### Functional Requirements
+
+Every filter must:
+
+- Work with actual product data.
+- Update the displayed products correctly.
+- Support combined filtering.
+- Support clearing individual filters.
+- Support clearing all filters.
+- Preserve compatible URL query parameters.
+- Work with sorting.
+- Work with pagination.
+- Handle empty results.
+- Handle loading states.
+- Handle API errors.
+- Work on mobile, tablet, and desktop.
+
+The backend must validate and process applicable filter parameters.
+
+Do not implement frontend-only filtering if the existing architecture uses server-side product filtering.
+
+### Responsive Filtering
+
+Desktop:
+- Preserve the existing sidebar layout on applicable listing pages.
+
+Tablet:
+- Use an appropriate collapsible or responsive filter panel.
+
+Mobile:
+- Use a premium Filter button that opens a drawer or modal.
+- Provide Apply Filters.
+- Provide Clear All.
+- Close the panel appropriately.
+- Prevent unwanted horizontal overflow.
+
+Ensure filter interactions are accessible.
+
+---
+
+# PART 6 — PREMIUM DYNAMIC HOMEPAGE ARCHITECTURE
+
+Improve the homepage into a premium modern e-commerce storefront.
+
+The homepage should provide a visually engaging shopping experience with a balanced mixture of:
+
+- Hero slides.
+- Category collections.
+- Promotional banners.
+- Product collections.
+- Featured products.
+- Best sellers.
+- New arrivals.
+- Top-rated products.
+- Special offers.
+- Advertisements.
+- Customer reviews.
+
+Do not create a repetitive page with only product grids.
+
+Use appropriate visual hierarchy, spacing, typography, and premium product cards.
+
+### IMPORTANT
+
+The homepage should be dynamically managed through the existing admin panel.
+
+Avoid hardcoded product collections and static banner content.
+
+Use real products from MongoDB.
+
+---
+
+# PART 7 — HOMEPAGE SECTION STRUCTURE
+
+Preserve the existing hero slider and category section.
+
+Then implement or improve the remaining sections in a visually balanced order.
+
+A recommended homepage structure is:
+
+### 1. Existing Header & Navigation
+
+Keep the current implementation.
+
+### 2. Existing Hero Slider
+
+Preserve the existing admin-controlled hero slider.
+
+Allow admin to manage:
+
+- Slide image.
+- Mobile image.
+- Heading.
+- Subtitle.
+- CTA text.
+- CTA destination.
+- Display order.
+- Active/inactive status.
+
+Do not break existing functionality.
+
+### 3. Existing Category Section
+
+Preserve the existing category section.
+
+Verify that category cards navigate to the correct category pages.
+
+### 4. Promotional Banner Sections
+
+Support multiple promotional banner placements.
+
+Examples:
+
+- Full-width promotional banner.
+- Two-column promotional banners.
+- Three-column small banners.
+- Campaign banners.
+- Category promotional banners.
+
+Each banner must be configurable through the admin panel.
+
+### 5. Featured Products
+
+Create a premium Featured Products section.
+
+Display actual products marked as featured through the existing admin/product management system.
+
+Possible product card information:
+
+- Product image.
+- Product name.
+- Brand.
+- Current price.
+- Original price, where applicable.
+- Discount percentage, where applicable.
+- Rating, where available.
+- Wishlist action.
+- Quick View, if supported.
+- Add to Cart.
+- Product details navigation.
+
+Use consistent premium product cards.
+
+### 6. Best Seller Products
+
+Display products based on actual order data.
+
+Best sellers must not be selected using arbitrary hardcoded product IDs.
+
+Use verified order-item sales data and the existing product availability rules.
+
+Do not count cancelled or failed orders as completed sales.
+
+Where the project has insufficient sales data, show a proper empty state rather than inventing best sellers.
+
+### 7. New Arrivals
+
+Display recently published or available products based on actual creation/publication timestamps.
+
+Use appropriate sorting and pagination or limits.
+
+### 8. Top Rated Products
+
+Display products using actual verified customer ratings.
+
+Do not fabricate ratings.
+
+Use the existing product review aggregation logic.
+
+### 9. Special Offers / On Sale
+
+Display products with actual active discounts.
+
+Verify original price and sale price.
+
+Do not show expired or invalid promotions.
+
+### 10. Additional Dynamic Product Collections
+
+Support other product collections where useful.
+
+Examples:
+
+- Trending Products.
+- Recommended Products.
+- Popular Products.
+- Premium Collections.
+- Recently Viewed Products, if already supported.
+- Category-specific collections.
+
+Do not add sections merely for decoration.
+
+Every product section must have a real data source and a meaningful purpose.
+
+### 11. Advertisement Placements
+
+Support small and large advertisement placements between homepage sections.
+
+Examples:
+
+- Horizontal promotional advertisements.
+- Compact campaign cards.
+- Promotional side-by-side banners.
+- Category-specific advertisements.
+
+Advertisements must be configurable through the existing admin panel.
+
+### 12. Customer Reviews / Testimonials
+
+This section must appear immediately ABOVE the main website footer.
+
+Create a premium testimonial section.
+
+Display ONLY the latest FOUR approved and published customer reviews.
+
+Requirements:
+
+- Exactly four reviews maximum.
+- Newest first.
+- Approved/published reviews only.
+- Never show pending reviews.
+- Never show rejected reviews.
+- Never invent customer reviews.
+- Never use dummy testimonials in production.
+
+Each review card should display, where available:
+
+- Customer name or approved display name.
+- Customer avatar.
+- Star rating.
+- Review text.
+- Product name, if the review is product-specific.
+- Review date.
+
+### Review Card Design
+
+Use premium cards with:
+
+- Clean white/light background.
+- Subtle borders or shadows.
+- Consistent spacing.
+- Star rating.
+- Readable typography.
+- Proper text truncation.
+- Responsive layout.
+
+Keep review content readable.
+
+Do not expose private customer information.
+
+If fewer than four approved reviews exist, show only the available approved reviews.
+
+If no approved reviews exist, hide the testimonial section gracefully or use a suitable empty-state policy.
+
+Do not generate fake content.
+
+### Review Carousel
+
+If a carousel is appropriate, implement a smooth responsive carousel.
+
+Ensure mobile and desktop usability.
+
+Do not use excessive animation.
+
+### Footer
+
+Preserve the existing footer.
+
+The customer review section must be placed directly before it.
+
+Do not remove existing footer links, contact information, payment logos, or social links.
+
+---
+
+# PART 8 — ADMIN PANEL: DYNAMIC HOMEPAGE MANAGEMENT
+
+The homepage must be manageable through the existing admin panel.
+
+Investigate existing modules before creating anything new.
+
+Extend existing banner, product, advertisement, review, and homepage management modules wherever possible.
+
+### Homepage Section Management
+
+Provide appropriate admin controls to:
+
+- Enable or disable homepage sections.
+- Change section titles.
+- Change section subtitles.
+- Change section order.
+- Configure product collection type.
+- Configure displayed product count.
+- Select a category or collection where supported.
+- Configure CTA labels and destinations.
+- Preview changes.
+- Save changes.
+
+Use persistent MongoDB-backed configuration.
+
+### Dynamic Banner Management
+
+Admin should be able to:
+
+- Upload banners.
+- Preview banners.
+- Edit banners.
+- Replace banner images.
+- Delete banners.
+- Set banner placement.
+- Set display order.
+- Configure desktop/mobile images.
+- Configure CTA.
+- Set active/inactive status.
+
+Use the existing Cloudinary or media-upload system.
+
+Do not create a new incompatible image-upload architecture.
+
+### Advertisement Management
+
+Admin should be able to:
+
+- Create advertisements.
+- Upload advertisement images.
+- Select placement.
+- Configure destination URL.
+- Configure active dates, if supported.
+- Enable or disable advertisements.
+- Change display order.
+
+Validate URLs and uploaded files securely.
+
+Do not allow unsafe executable uploads.
+
+### Customer Review Management
+
+Integrate with the existing review system.
+
+Admin should be able to:
+
+- View customer reviews.
+- Approve reviews.
+- Reject reviews.
+- Publish reviews.
+- Unpublish reviews.
+- View review details.
+- Filter reviews.
+- Moderate inappropriate content.
+
+The homepage must automatically display the latest four approved reviews.
+
+When a new review is approved, the homepage must reflect the updated latest-four selection without requiring manual editing of the homepage.
+
+### Product Collection Management
+
+Reuse existing product flags and product attributes.
+
+Admin should be able to control appropriate collections such as:
+
+- Featured.
+- Best Seller, where supported.
+- New Arrival.
+- Top Rated.
+- On Sale.
+
+Do not introduce duplicate product classification systems.
+
+Use actual product and order data.
+
+---
+
+# PART 9 — HOMEPAGE BACKEND & DATABASE ARCHITECTURE
+
+Investigate existing MongoDB models before creating new ones.
+
+Where necessary, extend the existing architecture for:
+
+- Homepage configuration.
+- Homepage sections.
+- Banner placement.
+- Advertisement placement.
+- Review publication status.
+- Product collection configuration.
+
+All admin changes must persist in MongoDB.
+
+The public homepage must retrieve the active configuration from secure public APIs.
+
+Do not expose admin-only configuration or private customer information.
+
+Implement:
+
+- Proper schemas.
+- Validation.
+- Appropriate indexes.
+- Safe update operations.
+- Public/admin API separation.
+- Authorization.
+- Error handling.
+- Efficient queries.
+- Appropriate caching and invalidation if needed.
+
+Do not create unnecessary duplicate collections.
+
+Do not delete or reset existing production data.
+
+---
+
+# PART 10 — PERFORMANCE & DATA CONSISTENCY
+
+Optimize the homepage for real-world production usage.
+
+Verify:
+
+- Efficient homepage API responses.
+- Avoidance of unnecessary repeated API requests.
+- Lazy loading of non-critical images.
+- Appropriate image dimensions.
+- Responsive image delivery.
+- Product query optimization.
+- Review query optimization.
+- Database indexes.
+- Pagination where applicable.
+- Correct loading states.
+- Skeleton components consistent with the current design.
+
+Do not create unnecessary skeletons that change the existing design.
+
+Avoid layout shifts.
+
+Do not load the entire product catalog merely to display a limited homepage collection.
+
+Use appropriate query limits and pagination.
+
+---
+
+# PART 11 — ROUTING & BACKWARD COMPATIBILITY
+
+Preserve all existing routes and URLs.
+
+Do not change:
+
+- Homepage URL.
+- Product details URLs.
+- Category URLs.
+- Shop URLs.
+- Search URLs.
+- Checkout URL.
+- Cart URL.
+- Account URLs.
+- Admin URLs.
+- Existing API endpoints unnecessarily.
+
+Ensure the route-specific filtering logic works correctly.
+
+Homepage must not accidentally inherit a product listing sidebar through a shared layout.
+
+Do not break browser refresh behavior.
+
+Do not break navigation history.
+
+Do not break existing links or bookmarks.
+
+---
+
+# PART 12 — SECURITY
+
+Review the complete implementation for:
+
+- Authentication.
+- Authorization.
+- Admin role protection.
+- Customer ownership.
+- IDOR.
+- NoSQL injection.
+- XSS.
+- CSRF where applicable.
+- Input validation.
+- File upload security.
+- URL validation.
+- Sensitive information exposure.
+- Payment security.
+- API rate limiting where appropriate.
+
+All admin homepage-management APIs must be protected by backend authorization.
+
+Never rely on frontend-only admin restrictions.
+
+Public homepage APIs must return only published and public information.
+
+Customer reviews must not expose private account information.
+
+---
+
+# PART 13 — REGRESSION TESTING
+
+This is a critical requirement.
+
+Changes to shared components can break multiple pages.
+
+Before and after implementation, verify all relevant routes.
+
+### Homepage
+
+- Header.
+- Navigation.
+- Hero slider.
+- Categories.
+- Banners.
+- Featured Products.
+- Best Sellers.
+- New Arrivals.
+- Top Rated.
+- Advertisements.
+- Customer Reviews.
+- Footer.
+
+### Product Listing Pages
+
+- Shop.
+- Category.
+- Search Results.
+- Deals.
+- Brand listings, if available.
+
+Verify that filtering remains functional.
+
+### Other Pages
+
+- Product Details.
+- Cart.
+- Wishlist.
+- Checkout.
+- Customer Account.
+- My Orders.
+- Order Success.
+- Admin Dashboard.
+- Admin Order Management.
+- Admin Banner Management.
+- Admin Review Management.
+
+### Device Testing
+
+Test:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Verify:
+
+- No horizontal overflow.
+- No broken navigation.
+- No overlapping sections.
+- No clipped dropdowns.
+- No broken carousels.
+- No inaccessible buttons.
+- No filter drawer issues.
+
+### Automated Testing
+
+Run available project scripts:
+
+- npm run lint
+- npm run typecheck
+- npm test
+- npm run build
+
+Only execute scripts that exist.
+
+Add or update relevant tests using the existing testing infrastructure.
+
+Do not fabricate test results.
+
+---
+
+# PART 14 — STRICT RULES
+
+1. Do not rebuild the entire homepage.
+2. Do not remove the existing hero slider.
+3. Do not remove existing categories.
+4. Do not delete existing banners.
+5. Do not remove the existing navigation.
+6. Do not redesign unrelated pages.
+7. Do not delete the global product filtering backend.
+8. Do not remove filters from applicable product listing pages.
+9. Do not display the filter sidebar on the homepage.
+10. Do not create dummy products.
+11. Do not create fake customer reviews.
+12. Do not hardcode homepage banners.
+13. Do not create fake best sellers.
+14. Do not invent product ratings.
+15. Do not break admin-controlled content.
+16. Do not create duplicate homepage management systems.
+17. Do not introduce unnecessary dependencies.
+18. Do not change existing API contracts without necessity.
+19. Do not modify unrelated business logic.
+20. Do not change working routes or URLs.
+21. Do not remove existing components without investigation.
+22. Do not reset MongoDB.
+23. Do not use MongoMemoryServer.
+24. Do not bypass authentication or authorization.
+25. Do not claim unverified functionality works.
+
+**Most importantly: Preserve all existing working functionality.**
+
+If a component is shared across multiple pages, understand its dependencies before modifying it.
+
+Implement page-specific behavior instead of globally breaking shared components.
+
+---
+
+# PART 15 — IMPLEMENTATION WORKFLOW
+
+Follow this exact workflow:
+
+STEP 1: Investigate the repository.
+
+STEP 2: Audit the previously implemented Checkout System.
+
+STEP 3: Identify checkout defects and incomplete functionality.
+
+STEP 4: Inspect the current homepage and the uploaded screenshot.
+
+STEP 5: Identify why the Product Filter Sidebar is appearing on the homepage.
+
+STEP 6: Identify all pages that depend on the shared filtering components.
+
+STEP 7: Prepare a targeted implementation plan.
+
+STEP 8: Implement the homepage-only sidebar removal.
+
+STEP 9: Verify global product filtering.
+
+STEP 10: Implement or improve dynamic homepage sections.
+
+STEP 11: Integrate admin-controlled banners and advertisements.
+
+STEP 12: Integrate the latest four approved customer reviews.
+
+STEP 13: Verify the homepage/backend/MongoDB integration.
+
+STEP 14: Fix checkout issues discovered during the audit.
+
+STEP 15: Perform complete regression testing.
+
+STEP 16: Verify the production build.
+
+Do not stop after producing an investigation report or implementation plan. Proceed with the actual code changes using the available project environment.
+
+If access to any required system or external integration is unavailable, report the exact limitation instead of claiming completion.
+
+---
+
+# PART 16 — FINAL ENGINEERING REPORT
+
+After completing the work, provide:
+
+## 1. Project Investigation
+Describe the existing architecture.
+
+## 2. Checkout Audit
+List all verified checkout functionality and any defects fixed.
+
+## 3. Homepage Filter Sidebar
+Explain why it appeared and how it was removed from the homepage without affecting other pages.
+
+## 4. Global Product Filtering
+List all verified listing pages and supported filters.
+
+## 5. Homepage Implementation
+Describe all existing and improved sections.
+
+## 6. Dynamic Admin Management
+Explain banner, advertisement, section, and product collection controls.
+
+## 7. Customer Review System
+Explain how the latest four approved reviews are retrieved and displayed.
+
+## 8. Backend Implementation
+List APIs, controllers, services, middleware, and validation changes.
+
+## 9. Database Implementation
+List schema changes, indexes, and persistence verification.
+
+## 10. Modified Files
+Provide exact file paths and explain their purpose.
+
+## 11. Security Verification
+List actual security checks performed.
+
+## 12. Responsive Verification
+Report desktop, tablet, and mobile results.
+
+## 13. Testing Results
+Report actual lint, typecheck, tests, and build results.
+
+## 14. Regression Results
+Explain which existing features were checked and whether any regressions were detected.
+
+## 15. Production Readiness
+Classify the final implementation as:
+
+- Fully verified.
+- Partially verified.
+- Not production-ready.
+
+List all remaining issues honestly.
+
+---
+
+# FINAL DIRECTIVE
+
+My primary objective is to maintain my existing e-commerce website while improving its homepage and completing the Checkout System.
+
+The homepage must remain a premium storefront, not a product-filtering dashboard.
+
+The global Product Filtering System must remain functional on the appropriate product listing pages.
+
+The homepage must contain premium product collections, promotional banners, advertisements, and the latest four approved customer reviews.
+
+The admin panel must control the dynamic homepage content.
+
+The checkout system must be fully integrated with the backend, MongoDB, customer accounts, payment verification, and admin order management.
+
+**Do not remove existing working features while implementing these requirements.**
+
+**Do not change unrelated business logic, components, routes, URLs, integrations, or design.**
+
+**Investigate first. Understand dependencies. Implement targeted changes. Test all affected pages. Verify the final production build.**
+
+Work as a Principal Software Engineer responsible for the reliability and maintainability of a real production e-commerce application.

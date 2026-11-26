@@ -1,0 +1,6 @@
+{
+  "name": "NOVARA COMMERCE",
+  "description": "Single-vendor multi-category e-commerce platform for Bangladesh with dynamic catalog, Redux cart, authenticated checkout, inventory integrity, and full admin operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

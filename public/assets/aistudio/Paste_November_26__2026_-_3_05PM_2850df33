@@ -1,0 +1,1372 @@
+# MASTER IMPLEMENTATION PROMPT
+## Premium Production-Grade Checkout, Bangladesh Location Autocomplete, Order Management & Order Success System
+
+### ROLE ASSIGNMENT
+
+Act as an elite engineering team consisting of:
+
+- Principal Software Engineer
+- Senior Full-Stack Software Architect
+- PhD-Level Software Engineering Specialist
+- Senior React & TypeScript Engineer
+- Senior Node.js & Express.js Backend Engineer
+- MongoDB Database Architect
+- UI/UX Design Engineer
+- Cybersecurity Engineer
+- DevOps Engineer
+- QA Automation Engineer
+
+Your responsibility is to investigate, design, implement, integrate, test, and verify a complete production-grade Checkout and Order Management System inside my existing E-commerce project.
+
+This is NOT a UI-only development task.
+
+You must implement the complete feature across the frontend, backend, API, middleware, services, database, customer account, and admin panel.
+
+---
+
+# 1. PRIMARY OBJECTIVE
+
+I have provided a reference screenshot of a premium e-commerce checkout page.
+
+**IMPORTANT: Treat the uploaded screenshot as the primary visual design reference.**
+
+Recreate its overall design as closely as reasonably possible.
+
+The final Checkout Page should preserve the reference image's:
+
+- Overall layout and proportions.
+- Premium green color scheme.
+- Typography and font hierarchy.
+- Header and navigation positioning.
+- Checkout hero banner.
+- Form layout.
+- Two-column checkout structure.
+- Order summary card.
+- Payment method cards.
+- Trust and security elements.
+- Support section.
+- Footer design.
+
+Do not create a completely different checkout design.
+
+Do not simplify the reference into a basic checkout form.
+
+The goal is a premium, modern, polished, responsive e-commerce checkout experience that closely matches the uploaded image.
+
+However, visual similarity must not come at the expense of functionality, accessibility, or production reliability.
+
+---
+
+# 2. FIRST: INVESTIGATE THE EXISTING PROJECT
+
+Before modifying any code, thoroughly investigate the existing repository.
+
+Inspect:
+
+1. package.json and installed dependencies.
+2. Frontend folder structure.
+3. Existing React components.
+4. Existing routing architecture.
+5. Tailwind CSS configuration.
+6. Existing fonts and design system.
+7. Authentication system.
+8. User account architecture.
+9. Shopping cart implementation.
+10. Product and inventory models.
+11. Existing order models and APIs.
+12. Payment integrations.
+13. Shipping and delivery logic.
+14. MongoDB configuration.
+15. Admin panel architecture.
+16. Existing admin order management.
+17. Notification system.
+18. Existing environment variables.
+19. Testing infrastructure.
+20. Production deployment configuration.
+
+Understand the actual architecture before implementing anything.
+
+**Strict requirement:**
+
+Reuse existing components, APIs, services, database models, authentication, and integrations wherever appropriate.
+
+Do not create duplicate order systems or duplicate customer models.
+
+Do not replace existing working business logic.
+
+Do not introduce unnecessary dependencies.
+
+Do not rewrite the entire application.
+
+Implement the smallest complete architectural solution.
+
+---
+
+# 3. CHECKOUT PAGE — PREMIUM UI IMPLEMENTATION
+
+Recreate the reference screenshot's checkout experience.
+
+## 3.1 Existing Website Header
+
+Preserve the existing website's header and navigation.
+
+The checkout page should integrate with the existing:
+
+- Promotional announcement bar.
+- Main logo and navigation.
+- Product search.
+- Account section.
+- Wishlist icon.
+- Shopping cart icon.
+- Main navigation menu.
+
+Do not create duplicate headers if the application already has a shared header component.
+
+## 3.2 Checkout Hero Banner
+
+Create a premium checkout hero banner matching the reference image.
+
+Visual requirements:
+
+- Rich green gradient background.
+- Dark green atmospheric background effects.
+- Premium shopping/security illustration.
+- Shield and lock visual elements.
+- Large "Checkout" heading.
+- Short subtitle: "Complete your order quickly and securely".
+- Secure Checkout badge.
+- Breadcrumb navigation.
+
+### Admin-Controlled Banner
+
+The checkout hero banner must be dynamically configurable from the existing admin panel.
+
+Admin should be able to:
+
+- Upload a banner image.
+- Preview the image.
+- Replace the image.
+- Remove the image.
+- Update the heading.
+- Update the subtitle.
+- Update the badge text.
+- Enable or disable the banner.
+- Configure responsive desktop/mobile images if supported by the existing architecture.
+
+Use the existing Cloudinary or image-upload infrastructure if available.
+
+Store banner configuration in MongoDB.
+
+The frontend must fetch the active checkout banner through a backend API.
+
+Never hardcode the final banner content.
+
+Never use a frontend-only configuration as the production source of truth.
+
+If no suitable admin module exists, create a properly integrated Checkout Banner management section.
+
+---
+
+# 4. CHECKOUT FORM — COMPLETE FUNCTIONAL IMPLEMENTATION
+
+Create the main checkout section with the same two-column structure as the reference.
+
+**Left column:** Checkout form.
+
+**Right column:** Order summary and trust information.
+
+On desktop, maintain a balanced two-column layout.
+
+On tablets and mobile devices, stack the columns naturally without horizontal overflow.
+
+## SECTION 1 — CONTACT INFORMATION
+
+Create a premium form section with:
+
+- Email Address *
+- Phone Number *
+
+Requirements:
+
+- Proper email validation.
+- Bangladesh phone number validation.
+- Appropriate input formatting.
+- Required-field validation.
+- Inline error messages.
+- Accessible labels.
+- Loading and submission states.
+
+If the customer is logged in, automatically populate available information from their account.
+
+Do not overwrite existing saved profile information without permission.
+
+## SECTION 2 — PERSONAL INFORMATION
+
+Create:
+
+- Full Name *
+- Gender (optional)
+
+Requirements:
+
+- Automatically populate available account information.
+- Allow the customer to edit information.
+- Validate required fields.
+- Save appropriate profile information only through authorized backend operations.
+
+Do not force gender selection to place an order.
+
+## SECTION 3 — BANGLADESH SHIPPING ADDRESS
+
+This section is extremely important.
+
+Implement a real Bangladesh administrative location selection system.
+
+### Required Location Hierarchy
+
+Division → District → Thana/Upazila → Union.
+
+Create the following cascading searchable dropdowns:
+
+1. Division *
+2. District *
+3. Thana/Upazila *
+4. Union *
+
+Also create:
+
+5. Full Home Address *
+
+### NPM PACKAGE REQUIREMENT
+
+Use a suitable, maintained Bangladesh administrative geography NPM package that provides the required location hierarchy.
+
+Investigate available packages and verify:
+
+- Package maintenance status.
+- TypeScript compatibility.
+- Data accuracy.
+- Division coverage.
+- District coverage.
+- Upazila coverage.
+- Union coverage.
+- Package API and data structure.
+- Production compatibility.
+
+Choose the most appropriate package based on actual verified coverage.
+
+Do not invent package names, APIs, or package capabilities.
+
+If a package does not provide complete Union-level data, investigate a compatible maintained data source rather than silently omitting the required hierarchy.
+
+**Absolutely no manually hardcoded location lists.**
+
+Do not create fake initial location data.
+
+Do not seed dummy divisions, districts, thanas, or unions into MongoDB.
+
+Do not populate dropdowns with arbitrary sample values.
+
+### Premium Autocomplete Dropdown Behavior
+
+Every location dropdown must support:
+
+- Click to open dropdown.
+- Automatically display available options.
+- Search input inside the dropdown.
+- Instant search filtering.
+- Keyboard navigation.
+- Enter to select.
+- Escape to close.
+- Clear selection.
+- Loading state.
+- Empty search-result state.
+- Mobile-friendly interaction.
+- Accessible focus management.
+
+Example:
+
+When a customer clicks Division:
+
+Display all available Bangladesh divisions.
+
+The customer can type "Dhaka" and see matching results.
+
+After selecting Dhaka, load only its relevant districts.
+
+After selecting a district, load its associated thanas/upazilas.
+
+After selecting a thana/upazila, load its associated unions.
+
+Changing a parent selection must invalidate and clear all dependent child selections.
+
+Never allow mismatched location combinations.
+
+### Location Data Architecture
+
+Prefer using the selected NPM package as the authoritative source of location hierarchy.
+
+If necessary, create a reusable location service or backend API adapter around the package.
+
+Avoid copying an entire dataset into MongoDB unnecessarily.
+
+If caching is required, implement it appropriately without creating inconsistent duplicate location data.
+
+Persist the selected location names and their identifiers in the order's shipping address snapshot.
+
+The saved address must remain understandable even if the location package is updated later.
+
+### Full Home Address
+
+Create a full-width address input.
+
+Placeholder:
+
+"House No, Road No, Area, Landmark..."
+
+Validate the field appropriately.
+
+---
+
+# 5. CUSTOMER SAVED ADDRESS SYSTEM
+
+Implement a real saved-address feature.
+
+Customers should be able to:
+
+- Save their shipping address.
+- Reuse a previously saved address.
+- Edit saved addresses.
+- Delete saved addresses.
+- Set a default address.
+- Select a saved address during checkout.
+- Add a new address during checkout.
+
+### Backend Requirements
+
+Create or extend the appropriate customer address model and APIs.
+
+Each address must belong to its authenticated customer.
+
+Implement:
+
+- Create address.
+- Get customer addresses.
+- Update address.
+- Delete address.
+- Set default address.
+
+Enforce ownership validation on the backend.
+
+One customer must never be able to access, modify, or delete another customer's saved addresses.
+
+Do not trust customer IDs supplied by the frontend.
+
+Derive authenticated identity from the existing secure authentication middleware.
+
+If guest checkout already exists, preserve it and implement its behavior consistently without weakening authenticated account security.
+
+---
+
+# 6. PAYMENT METHOD SECTION
+
+Recreate the reference image's premium payment selection cards.
+
+Payment methods shown in the reference:
+
+1. Credit / Debit Card
+2. bKash
+3. Nagad
+4. Cash on Delivery
+
+Use premium payment cards with:
+
+- Appropriate payment logos.
+- Clean icons.
+- Green selected border.
+- Selected checkmark.
+- Hover effects.
+- Accessible radio selection.
+- Responsive grid.
+
+### Critical Payment Requirements
+
+Inspect the existing payment integrations before implementing anything.
+
+Only show payment methods that are actually enabled and supported by the backend.
+
+For each method:
+
+- Validate availability.
+- Validate payment configuration.
+- Implement the correct payment initiation flow.
+- Verify payment status on the backend.
+- Handle failed and cancelled payments.
+- Prevent duplicate payment processing.
+- Store transaction references.
+- Maintain correct order/payment status.
+
+For bKash, Nagad, and card payments, use the existing configured gateway integration if available.
+
+If an integration is missing, identify the missing configuration and implement the appropriate integration architecture without simulating successful transactions.
+
+Never display a successful payment result simply because the customer clicked a button.
+
+Never expose payment secrets in frontend code.
+
+### Cash on Delivery
+
+Implement actual COD order creation.
+
+The order must be persisted in MongoDB with the appropriate pending payment status.
+
+Do not treat COD orders as already paid.
+
+---
+
+# 7. TERMS AND CONDITIONS
+
+Add the checkbox:
+
+"I agree to the Terms & Conditions and Privacy Policy."
+
+Requirements:
+
+- Links must open the existing policy pages.
+- Checkbox must be required.
+- The backend must validate the accepted policy state.
+- Record the applicable policy version or acceptance timestamp when appropriate.
+
+Do not create fake policy links.
+
+---
+
+# 8. PREMIUM ORDER SUMMARY
+
+Recreate the right-side Order Summary card from the reference screenshot.
+
+Display:
+
+- Items count.
+- Product image.
+- Product name.
+- Selected variant where applicable.
+- Product price.
+- Quantity.
+- Subtotal.
+- Shipping cost.
+- Tax/VAT.
+- Discount if applicable.
+- Grand total.
+
+Example visual content from the reference image:
+
+Smart Watch Series 10 — $14.99
+
+AirPods Pro 2 — $38.99
+
+Subtotal — $53.98
+
+Shipping — Free
+
+Tax (10%) — $5.40
+
+Total — $59.38
+
+These are visual reference values only.
+
+Never hardcode them as actual production prices or tax rules.
+
+### Real Calculation Requirements
+
+Calculate order totals using authoritative backend product, cart, shipping, tax, and discount data.
+
+The frontend must not determine the final payable amount.
+
+Verify:
+
+- Product availability.
+- Product prices.
+- Product variants.
+- Quantity limits.
+- Stock availability.
+- Discount validity.
+- Shipping charges.
+- Applicable tax rules.
+
+Prevent price manipulation through browser requests.
+
+Display the same authoritative calculation in the checkout UI and final order confirmation.
+
+Use the project's existing currency configuration.
+
+If the store uses BDT, display ৳ correctly throughout the checkout.
+
+### Cart Item Removal
+
+The order summary may provide a remove-item action.
+
+If an item is removed:
+
+- Update the cart through the existing cart API.
+- Recalculate the order summary.
+- Update item count.
+- Handle an empty cart correctly.
+- Prevent checkout when no purchasable items remain.
+
+Do not create a separate inconsistent cart state.
+
+---
+
+# 9. TRUST AND SECURITY INFORMATION CARD
+
+Below the order summary, recreate the reference's premium trust card.
+
+Display:
+
+- Shop with Confidence.
+- Free Shipping.
+- Easy Return.
+- Secure Payment.
+
+All labels and values should be configurable where appropriate.
+
+Do not make misleading shipping or return-policy promises.
+
+Use the store's actual policies.
+
+---
+
+# 10. SUPPORT SECTION
+
+Create a premium support section above the footer.
+
+Include:
+
+- Customer support illustration or existing support avatar.
+- "Need Help?" heading.
+- Short support message.
+- Contact Support button.
+- Supported payment logos.
+
+The Contact Support button must navigate to the actual support/contact page or invoke the existing support functionality.
+
+Do not create nonfunctional buttons.
+
+---
+
+# 11. PLACE ORDER — COMPLETE BACKEND TRANSACTION
+
+Create a premium full-width green Place Order button.
+
+Button label:
+
+"Place Order Now"
+
+Add an appropriate lock icon and arrow icon.
+
+### Order Submission Requirements
+
+When the customer clicks Place Order:
+
+1. Validate all required checkout fields.
+2. Validate authentication or supported guest checkout.
+3. Validate cart contents.
+4. Verify product availability.
+5. Recalculate all prices on the server.
+6. Validate shipping information.
+7. Validate payment method.
+8. Validate policy acceptance.
+9. Prevent duplicate submissions.
+10. Create the order using the backend.
+11. Persist the order in MongoDB.
+12. Update or reserve inventory safely according to the existing inventory architecture.
+13. Initiate the payment flow where applicable.
+14. Return the correct order/payment state.
+15. Navigate to the appropriate success, pending, or failure page.
+
+### Database Integrity
+
+Implement appropriate transaction handling or atomic operations for inventory and order creation.
+
+Use idempotency protection to prevent duplicate orders from repeated clicks, retries, or network failures.
+
+Never clear the cart before successful order creation.
+
+Do not create an order with client-trusted prices.
+
+Do not mark unpaid online-payment orders as paid.
+
+Handle partial failures and payment callbacks safely.
+
+---
+
+# 12. MONGODB ORDER MODEL
+
+Inspect the existing order schema first.
+
+Extend it where appropriate instead of creating duplicate collections.
+
+The persisted order should contain the necessary information, including:
+
+- Unique order number.
+- Customer reference.
+- Customer name.
+- Customer email.
+- Customer phone.
+- Product snapshots.
+- Product variant snapshots.
+- Quantity.
+- Unit price.
+- Subtotal.
+- Discount.
+- Shipping cost.
+- Tax/VAT.
+- Grand total.
+- Currency.
+- Payment method.
+- Payment status.
+- Transaction reference.
+- Order status.
+- Shipping address snapshot.
+- Location identifiers and names.
+- Policy acceptance information where appropriate.
+- Order creation timestamp.
+- Relevant status timestamps.
+
+Product and address snapshots must preserve the actual information used when the order was placed.
+
+Do not rely exclusively on live product references for historical order details.
+
+Implement appropriate indexes.
+
+Ensure order numbers are unique.
+
+Implement safe data validation.
+
+---
+
+# 13. CUSTOMER ACCOUNT — ORDER HISTORY
+
+Integrate checkout with the existing customer account system.
+
+After successful order creation, the customer must be able to see the order in their account.
+
+Create or extend:
+
+**My Account → My Orders**
+
+Display:
+
+- Order number.
+- Order date.
+- Product summary.
+- Total amount.
+- Payment method.
+- Payment status.
+- Order status.
+- Shipping address.
+- Order details.
+- Tracking information if available.
+
+Implement:
+
+- Order list.
+- Pagination.
+- Order details.
+- Status display.
+- Reorder functionality if supported.
+- Cancellation request functionality if supported by the existing business rules.
+
+All order APIs must enforce customer ownership.
+
+A customer must never see another customer's orders.
+
+Order history must load from MongoDB through authenticated backend APIs.
+
+Never use frontend-only order history.
+
+---
+
+# 14. ADMIN PANEL — COMPLETE ORDER MANAGEMENT
+
+This is a mandatory part of the implementation.
+
+Every successfully created order must appear in the existing admin panel.
+
+Integrate with the current admin dashboard.
+
+If an appropriate order management module exists, extend it.
+
+Otherwise, implement a complete Order Management module consistent with the existing admin design.
+
+### Admin Order List
+
+Display:
+
+- Order number.
+- Customer name.
+- Customer contact.
+- Order date.
+- Total amount.
+- Payment method.
+- Payment status.
+- Order status.
+- Actions.
+
+### Order Details
+
+Admin should be able to inspect:
+
+- Customer information.
+- Ordered products.
+- Product quantities.
+- Product variants.
+- Shipping address.
+- Division.
+- District.
+- Thana/Upazila.
+- Union.
+- Full home address.
+- Payment information.
+- Transaction references.
+- Order total breakdown.
+- Order history.
+
+### Order Status Management
+
+Implement the existing business workflow or a properly defined equivalent:
+
+- Pending.
+- Confirmed.
+- Processing.
+- Shipped.
+- Out for Delivery.
+- Delivered.
+- Cancelled.
+
+Only permit valid status transitions.
+
+Do not allow arbitrary status changes that violate business rules.
+
+Record status changes and timestamps.
+
+### Admin Filters
+
+Implement:
+
+- Search by order number.
+- Search by customer.
+- Filter by order status.
+- Filter by payment method.
+- Filter by payment status.
+- Filter by date range.
+- Pagination.
+- Sorting.
+
+### Admin Security
+
+All admin order endpoints must be protected using existing backend authentication and role authorization middleware.
+
+Never rely on frontend route protection alone.
+
+Only authorized administrators may access or modify order management data.
+
+Record important administrative actions in the existing audit trail if available.
+
+---
+
+# 15. ORDER NOTIFICATIONS
+
+Integrate with the existing notification architecture.
+
+When an order is created:
+
+- Create an admin notification.
+- Update the admin notification badge/count.
+- Make the order visible in the admin dashboard.
+- Notify the customer through the existing notification/email system if configured.
+
+If email notifications use Resend or SMTP, integrate with the existing service.
+
+Do not introduce duplicate notification systems.
+
+Handle email failures without accidentally duplicating orders.
+
+For payment status changes and order status changes, use the existing notification architecture where appropriate.
+
+---
+
+# 16. PREMIUM ORDER SUCCESS PAGE
+
+Create a separate, dedicated Order Success Page.
+
+This page is mandatory.
+
+It must be displayed only when the backend confirms the appropriate order creation state.
+
+### Visual Design
+
+Create a premium, modern success page that complements the checkout design.
+
+Use:
+
+- White/light background.
+- Premium green gradient accents.
+- Large animated success checkmark.
+- Elegant success card.
+- Order confirmation heading.
+- Short confirmation message.
+- Unique order number.
+- Order date.
+- Payment status.
+- Total amount.
+- Delivery address summary.
+- Ordered product summary.
+- Estimated delivery information only when supported by actual shipping data.
+
+### Canvas Confetti Effect
+
+Implement a subtle premium Canvas Confetti animation.
+
+Requirements:
+
+- Smooth, lightweight animation.
+- Green, white, and complementary accent particles.
+- Short animation duration.
+- Responsive behavior.
+- Respect prefers-reduced-motion.
+- Avoid excessive CPU usage.
+- Clean up animation resources.
+- Do not block page interaction.
+
+The effect should look elegant and professional, not like an exaggerated celebration.
+
+### Success Page Actions
+
+Include:
+
+1. View My Orders.
+2. Continue Shopping.
+3. Track Order, if tracking is available.
+
+All buttons must work.
+
+### Order Verification
+
+The success page must retrieve the actual order from the backend.
+
+Do not trust a frontend order object or URL query parameter as proof of order ownership or payment.
+
+Verify that the authenticated customer owns the order.
+
+For guest checkout, use an appropriately secured order confirmation mechanism.
+
+Handle these cases correctly:
+
+- Confirmed order.
+- Pending online payment.
+- Failed payment.
+- Invalid order reference.
+- Unauthorized order access.
+- Refreshing the success page.
+- Returning to the success page later.
+
+Do not create another order when refreshing the success page.
+
+Do not display paid status before verified payment confirmation.
+
+---
+
+# 17. BACKEND ARCHITECTURE
+
+Follow the existing backend architecture.
+
+If the project uses Node.js, Express.js, TypeScript, MongoDB, and Mongoose, implement the feature consistently with those technologies.
+
+Organize the implementation using the existing modular architecture.
+
+Where appropriate, use:
+
+- Routes.
+- Controllers.
+- Services.
+- Models.
+- Middleware.
+- Validators.
+- Utilities.
+- Types.
+- Configuration.
+
+Potential API responsibilities:
+
+### Checkout APIs
+
+- Get checkout summary.
+- Validate checkout data.
+- Calculate authoritative order totals.
+- Submit order.
+
+### Address APIs
+
+- Get saved addresses.
+- Create address.
+- Update address.
+- Delete address.
+- Set default address.
+
+### Order APIs
+
+- Create order.
+- Get customer orders.
+- Get order details.
+- Verify order ownership.
+- Track order.
+- Request cancellation where supported.
+
+### Admin APIs
+
+- Get all orders.
+- Get order details.
+- Update order status.
+- Update payment status through authorized workflows.
+- Search and filter orders.
+
+### Checkout Banner APIs
+
+- Get active checkout banner.
+- Update checkout banner.
+- Upload banner image.
+- Enable or disable banner.
+
+Do not blindly create these exact routes if equivalent routes already exist.
+
+Reuse existing API conventions and avoid duplicates.
+
+---
+
+# 18. SECURITY REQUIREMENTS
+
+Perform a complete security review of the new functionality.
+
+Check:
+
+- Authentication.
+- Role-based authorization.
+- IDOR.
+- Customer ownership validation.
+- Input validation.
+- NoSQL injection.
+- XSS.
+- CSRF where applicable.
+- Rate limiting.
+- Secure payment callbacks.
+- Webhook signature verification.
+- Idempotency.
+- Duplicate order prevention.
+- Price manipulation.
+- Stock manipulation.
+- Sensitive data exposure.
+- File upload validation.
+- Environment variable protection.
+
+Never trust:
+
+- Frontend product prices.
+- Frontend order totals.
+- Frontend payment status.
+- Frontend customer IDs.
+- Frontend admin roles.
+- Frontend inventory availability.
+
+All critical business decisions must be validated on the backend.
+
+---
+
+# 19. UI/UX QUALITY REQUIREMENTS
+
+The visual implementation must be premium and closely match the reference screenshot.
+
+### Typography
+
+Use a consistent modern typography system.
+
+Inspect existing fonts first.
+
+Use a suitable professional sans-serif font.
+
+If the project needs Bangla typography, choose an appropriate Bengali font with proper Unicode support.
+
+Maintain:
+
+- Clear heading hierarchy.
+- Readable form labels.
+- Consistent font weights.
+- Appropriate line heights.
+- Consistent button typography.
+
+### Colors
+
+Use the reference image's visual direction:
+
+- Primary green.
+- Deep forest green.
+- Light green.
+- White.
+- Soft neutral backgrounds.
+- Dark navy text.
+
+### Components
+
+Create reusable components where appropriate:
+
+- CheckoutHeroBanner.
+- CheckoutProgressSection.
+- CheckoutForm.
+- ContactInformation.
+- PersonalInformation.
+- BangladeshLocationSelector.
+- SearchableLocationDropdown.
+- SavedAddressSelector.
+- PaymentMethodSelector.
+- OrderSummary.
+- TrustInformationCard.
+- CheckoutSupportSection.
+- OrderSuccessPage.
+
+Reuse existing components whenever possible.
+
+### Responsive Design
+
+Verify:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Ensure:
+
+- No horizontal overflow.
+- No broken form layouts.
+- No clipped dropdowns.
+- No overlapping sticky elements.
+- No unusable payment cards.
+- No inaccessible mobile controls.
+
+### Performance
+
+Optimize:
+
+- Images.
+- API requests.
+- Location dropdown filtering.
+- Component rendering.
+- Database queries.
+- Checkout submission.
+- Confetti animation.
+
+Do not introduce unnecessary animation libraries.
+
+---
+
+# 20. ADMIN CONFIGURATION & BUSINESS RULES
+
+Inspect existing settings and admin configuration.
+
+Where appropriate, support configurable:
+
+- Checkout banner.
+- Shipping charges.
+- Free shipping threshold.
+- Tax/VAT settings.
+- Available payment methods.
+- Checkout terms.
+- Support information.
+- Return policy information.
+
+Do not hardcode business rules in multiple frontend components.
+
+Use the existing settings architecture and backend as the source of truth.
+
+---
+
+# 21. TESTING & VERIFICATION
+
+Do not stop after writing code.
+
+Perform actual tests.
+
+### Frontend Testing
+
+Verify:
+
+- Checkout page rendering.
+- Form validation.
+- Dropdown search.
+- Cascading location selection.
+- Saved address selection.
+- Payment method selection.
+- Cart synchronization.
+- Order summary calculation.
+- Mobile responsiveness.
+- Success page rendering.
+
+### Backend Testing
+
+Verify:
+
+- Checkout API.
+- Address CRUD.
+- Order creation.
+- Order retrieval.
+- Duplicate submission prevention.
+- Payment verification.
+- Admin authorization.
+- Order status transitions.
+- Customer ownership validation.
+
+### Database Testing
+
+Verify:
+
+- Order persistence.
+- Correct customer references.
+- Address snapshots.
+- Product snapshots.
+- Correct calculations.
+- Unique order numbers.
+- Inventory consistency.
+- Duplicate prevention.
+
+### Security Testing
+
+Test:
+
+- Unauthorized checkout access where authentication is required.
+- Customer accessing another customer's order.
+- Non-admin accessing admin APIs.
+- Price manipulation attempts.
+- Invalid payment status manipulation.
+- Duplicate payment callbacks.
+- Invalid shipping location combinations.
+
+### Build Verification
+
+Run only scripts that exist in the project:
+
+- npm run lint
+- npm run typecheck
+- npm test
+- npm run build
+
+Also inspect server startup and deployment compatibility.
+
+Never fabricate test results.
+
+If an existing test fails, distinguish pre-existing failures from newly introduced failures.
+
+---
+
+# 22. STRICT IMPLEMENTATION RULES
+
+These instructions are mandatory.
+
+1. Do not build a frontend-only checkout.
+2. Do not create fake order success.
+3. Do not use dummy product data.
+4. Do not use hardcoded Bangladesh location lists.
+5. Do not create fake location autocomplete.
+6. Do not create frontend-only saved addresses.
+7. Do not store orders only in browser storage.
+8. Do not create duplicate MongoDB order models.
+9. Do not create duplicate admin panels.
+10. Do not bypass existing authentication.
+11. Do not expose payment credentials.
+12. Do not mark unverified payments as successful.
+13. Do not delete existing database records.
+14. Do not introduce MongoMemoryServer.
+15. Do not replace the configured MongoDB database.
+16. Do not replace the existing project architecture unnecessarily.
+17. Do not modify unrelated pages or features.
+18. Do not replace the existing header/footer unnecessarily.
+19. Do not introduce unnecessary npm packages.
+20. Do not claim production readiness without actual verification.
+
+Preserve all existing working functionality.
+
+If a required payment integration, package capability, business rule, or environment configuration is missing, report the gap instead of fabricating functionality.
+
+If a potentially destructive database migration is required, request approval before executing it.
+
+---
+
+# 23. ACCEPTANCE CRITERIA
+
+The implementation is considered complete only when all applicable criteria below are satisfied.
+
+### Visual
+
+- Checkout closely resembles the uploaded reference screenshot.
+- Premium green design is implemented.
+- Typography is consistent.
+- Responsive layouts work.
+- Checkout hero banner is admin-controlled.
+- Order summary looks and behaves correctly.
+
+### Bangladesh Address
+
+- Division dropdown works.
+- District dropdown works.
+- Thana/Upazila dropdown works.
+- Union dropdown works.
+- Search works in every dropdown.
+- Cascading selection works.
+- No fake or hardcoded location lists.
+- Saved address works.
+
+### Customer
+
+- Customer information is correctly populated.
+- Addresses can be saved and reused.
+- Orders are persisted.
+- My Orders displays real database records.
+- Order ownership is enforced.
+
+### Order Processing
+
+- Backend validates checkout.
+- Server calculates prices.
+- Orders are saved in MongoDB.
+- Inventory is handled safely.
+- Duplicate orders are prevented.
+- Payment states are accurate.
+- Success page uses verified order data.
+
+### Admin
+
+- New orders appear in admin.
+- Admin can inspect complete order details.
+- Admin can search and filter.
+- Admin can update valid order statuses.
+- Admin permissions are enforced.
+- Notifications work through the existing architecture.
+
+### Production Quality
+
+- Existing features remain functional.
+- Security checks are performed.
+- Tests are executed.
+- Build succeeds or remaining failures are clearly documented.
+- Deployment configuration is compatible.
+
+---
+
+# 24. FINAL ENGINEERING REPORT
+
+After completing the implementation, provide a detailed report.
+
+Use this format:
+
+**1. Project Investigation**
+- Existing architecture.
+- Existing checkout/order functionality.
+- Existing payment integrations.
+
+**2. Root Cause / Gap Analysis**
+- What was missing?
+- What needed improvement?
+
+**3. Visual Implementation**
+- How the reference design was recreated.
+- Typography and responsive behavior.
+
+**4. Bangladesh Location System**
+- NPM package selected.
+- Why it was selected.
+- Location hierarchy.
+- Searchable autocomplete implementation.
+
+**5. Frontend Changes**
+- Components created or modified.
+- Pages and routing.
+
+**6. Backend Changes**
+- APIs.
+- Controllers.
+- Services.
+- Middleware.
+- Validation.
+
+**7. Database Changes**
+- Models.
+- Schema changes.
+- Indexes.
+- Data persistence.
+
+**8. Customer Account Integration**
+- Saved addresses.
+- Order history.
+- Order details.
+
+**9. Admin Panel Integration**
+- Order management.
+- Banner configuration.
+- Notifications.
+- Authorization.
+
+**10. Payment Integration**
+- Supported payment methods.
+- Actual verification flow.
+- Missing configurations, if any.
+
+**11. Order Success Page**
+- Design.
+- Canvas animation.
+- Order verification.
+
+**12. Modified Files**
+List exact file paths and what changed.
+
+**13. Testing Results**
+List actual test commands and results.
+
+**14. Remaining Issues**
+List anything not completed and explain why.
+
+**15. Production Readiness**
+Clearly classify the implementation as:
+
+- Fully verified.
+- Partially verified.
+- Not production-ready.
+
+Never claim full production readiness if any critical functionality remains unverified.
+
+---
+
+# FINAL DIRECTIVE
+
+Do not merely generate a beautiful checkout screenshot.
+
+Build a real, complete, secure, maintainable, production-oriented Checkout and Order Management System.
+
+The uploaded reference screenshot defines the visual direction.
+
+The existing repository defines the architecture and business logic.
+
+The MongoDB database must store real customer addresses and orders.
+
+The customer account must display actual saved addresses and order history.
+
+The admin panel must receive and manage actual orders.
+
+Payment success must be verified by the backend.
+
+The Order Success Page must represent an actual persisted order.
+
+**Investigate first. Plan carefully. Implement completely. Test everything. Preserve existing functionality.**
+
+Start by investigating the entire existing project. Then present a concise implementation plan and proceed with the complete implementation using the existing project architecture.
+
+Do not stop after the investigation or after creating the UI. Complete the frontend, backend, database, customer account, admin panel, and testing wherever the existing project and available integrations permit.
